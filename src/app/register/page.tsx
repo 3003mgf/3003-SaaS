@@ -1,11 +1,13 @@
 import PricingCard from "@/components/PricingCard";
 import { authOptions } from "@base/auth";
 import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
 const RegisterPage = async() => {
 
   const session = await getServerSession(authOptions);
   
+  if(!session) redirect("https://3003saas.vercel.app/api/auth/signin?callbackUrl=https%3A%2F%2F3003saas.vercel.app%2F")
   
   return ( 
     <div className="isolate h-full overflow-hidden bg-gray-900 pb-40">

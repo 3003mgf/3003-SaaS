@@ -22,6 +22,7 @@ import { useSubscriptionStore } from "@/store/store"
 import LoadingSpinner from "./LoadingSpinner"
 import { StarIcon } from "lucide-react"
 import ManageBillingButton from "./ManageBillingButton"
+import { redirect } from "next/navigation"
 
 type Props = {
   name?: string,
@@ -88,7 +89,7 @@ export function UserButton({name, image, className, session}:Props) {
           </>
         )}
 
-        <DropdownMenuItem onClick={()=> signOut()} className="font-LVRegular">
+        <DropdownMenuItem onClick={()=> {signOut() ; redirect("/")}} className="font-LVRegular">
           <span className="pl-0.5 py-1">Sign Out</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

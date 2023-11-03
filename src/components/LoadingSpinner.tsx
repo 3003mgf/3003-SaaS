@@ -1,3 +1,5 @@
+'use client'
+
 import { TailSpin } from "react-loader-spinner";
 
 type Props = {
